@@ -16,16 +16,22 @@ export default function TextForm(props) {
     props.showalert("Converted to Lowercase","success");
   }
   const handleDownloadClick = () =>{
-    if(text.length > 0){
-      const element = document.createElement("a");
-      const file = new Blob([text], {type: 'text/plain'});
-      element.href = URL.createObjectURL(file);
-      element.download = "text.txt";
-      document.body.appendChild(element);
-      element.click();
-    }else{
+    //if(text.length > 0){
+    const element = document.createElement("a");
+    const file = new Blob([text], {type: 'text/plain'});
+    element.href = URL.createObjectURL(file);
+    element.download = "text.txt";
+    document.body.appendChild(element);
+    element.click();
+    //}
+    /*else{
       props.showalert("First enter some text to download","warning");
-    }
+    }*/
+
+  }
+  const copyText = () => {
+    navigator.clipboard.writeText(text);
+    props.showalert("Copied to Clipboard","success");
 
   }
   const RemoveSpacesClick = () =>{
@@ -42,22 +48,25 @@ export default function TextForm(props) {
   return (
     <>
       <div className="container" style={{color: props.mode === "light"?"black":"white"}}>
-          <h3>{props.heading}</h3>
+          <h3 className = "mb-2">{props.heading}</h3>
           <textarea className="form-control" id="mytext" rows="8" style={{backgroundColor: props.mode === "light"?"white":"#121212",color:props.mode === "light"?"black":"white" }}value={text} onChange={handleOnChange}></textarea>
-          <div className="btn btn-primary  m-2" onClick={handleUpClick}>Click to make text Uppercase</div>
-          <div className="btn btn-primary  m-2" onClick={handleLowClick}>Click to make text Lowercase</div>
-          <div className="btn btn-primary  m-2" onClick={handleDownloadClick}>Click to download the text</div>
-          <div className="btn btn-primary  m-2" onClick={RemoveSpacesClick}>Click to remove the extra spaces</div>
-          <div className="btn btn-primary  m-2" onClick={clearText}>Click to clear the text</div>
+          <button disabled={text.length === 0} className="btn btn-primary  m-2" onClick={handleUpClick}>Convert to Uppercase</button>
+          <button disabled={text.length === 0} className="btn btn-primary  m-2" onClick={handleLowClick}>Convert to Lowercase</button>
+          <button disabled={text.length === 0} className="btn btn-primary  m-2" onClick={handleDownloadClick}>Download the text</button>
+          <button disabled={text.length === 0} className="btn btn-primary  m-2" onClick={RemoveSpacesClick}>Remove the Extra Spaces</button>
+          <button disabled={text.length === 0} className="btn btn-primary  m-2" onClick={clearText}>Clear the text</button>
+          <button disabled={text.length === 0} className="btn btn-primary  m-2" onClick={copyText}>Copy the Text</button>
       </div>
       <div className="container" style={{color: props.mode === "light"?"black":"white"}}>
         <h2>Text Summary</h2>
-        <p><b>{(text.split(' ').filter((element) => {return element.length !== 0})).length}</b> words and <b>{text.length}</b> characters</p>
-        <p><b>{text.split(' ').length * 0.008}</b> minutes read</p>
-        <p><b><em>{text}</em></b></p>
+        <p><b>{(text.split(/\s+/).filter((element) => {return element.length !== 0})).length}</b> words and <b>{text.length}</b> characters</p>
+        <p><b>{(text.split(/\s+/).filter((element) => {return element.length !== 0})).length * 0.008}</b> minutes read</p>
+        <h2>Preview</h2>
+        <p><em>{text.length > 0?text:"Nothing to Preview"}</em></p>
       </div>
     </>
       
 
   )
 }
+
