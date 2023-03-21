@@ -15,7 +15,7 @@ export default function About(props) {
               data-bs-target="#collapseTwo"
               aria-expanded="false"
               aria-controls="collapseTwo"
-              style={{backgroundColor: props.mode==='light'?'#d3e0e9':'#061124', color: props.mode==='light'?'#061124':'white'}}
+              style={{backgroundColor: props.mode==='light'?'#F8F9FA':'#121212', color: props.mode==='light'?'#121212':'white'}}
             >
               <strong>About TextUtils</strong>
               
@@ -27,7 +27,7 @@ export default function About(props) {
             aria-labelledby="headingTwo"
             data-bs-parent="#accordionExample"
           >
-            <div className="accordion-body" style={{backgroundColor: props.mode==='light'?'#d3e0e9':'#061124', color: props.mode==='light'?'#061124':'white'}}>
+            <div className="accordion-body" style={{backgroundColor: props.mode==='light'?'#F8F9FA':'#121212', color: props.mode==='light'?'#121212':'white'}}>
             TextUtils is a utility which can make your day to day life easy, by manipulating your text in the way you want.
             </div>
           </div>
@@ -41,7 +41,7 @@ export default function About(props) {
               data-bs-target="#collapseOne"
               aria-expanded="true"
               aria-controls="collapseOne"
-              style={{backgroundColor: props.mode==='light'?'#d3e0e9':'#061124', color: props.mode==='light'?'#061124':'white'}}
+              style={{backgroundColor: props.mode==='light'?'#F8F9FA':'#121212', color: props.mode==='light'?'#121212':'white'}}
             >
               <strong>Features</strong>
             </button>
@@ -52,7 +52,7 @@ export default function About(props) {
             aria-labelledby="headingOne"
             data-bs-parent="#accordionExample"
           >
-            <div className="accordion-body" style={{backgroundColor: props.mode==='light'?'#d3e0e9':'#061124', color: props.mode==='light'?'#061124':'white'}}>
+            <div className="accordion-body" style={{backgroundColor: props.mode==='light'?'#F8F9FA':'#121212', color: props.mode==='light'?'#121212':'white'}}>
               <ul>
                 <li className="my-2">
                   Change lowercase text to uppercase.
@@ -88,7 +88,7 @@ export default function About(props) {
               data-bs-target="#collapseThree"
               aria-expanded="false"
               aria-controls="collapseThree"
-              style={{backgroundColor: props.mode==='light'?'#d3e0e9':'#061124', color: props.mode==='light'?'#061124':'white'}}
+              style={{backgroundColor: props.mode==='light'?'#F8F9FA':'#121212', color: props.mode==='light'?'#121212':'white'}}
             >
               <strong>Browser Compatibility</strong>
             </button>
@@ -99,7 +99,7 @@ export default function About(props) {
             aria-labelledby="headingThree"
             data-bs-parent="#accordionExample"
           >
-            <div className="accordion-body" style={{backgroundColor: props.mode==='light'?'#d3e0e9':'#061124', color: props.mode==='light'?'#061124':'white'}}>
+            <div className="accordion-body" style={{backgroundColor: props.mode==='light'?'#F8F9FA':'#121212', color: props.mode==='light'?'#121212':'white'}}>
               This <strong>Text Utility</strong> software works in any web browsers such as Chrome, Firefox, Internet Explorer, Safari, Opera. It suits to count characters in facebook, blog, books, excel document, pdf document, essays, etc.
             </div>
           </div>
